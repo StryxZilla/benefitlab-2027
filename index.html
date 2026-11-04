@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b101b">
+  <meta name="description" content="Explore 2027 Cedar Cares and Dell family healthcare plans with live sliders, real plan limits and transparent cost breakdowns.">
+  <title>BenefitLab 2027 · Cedar × Dell Family Simulator</title>
+  
+  <style>
+:root{--bg:#0b101b;--bg2:#0f1522;--card:#151d2c;--card2:#172234;--line:#28354b;--line-soft:#223048;--text:#f3f7fe;--muted:#9eacc0;--sub:#687a92;--teal:#56e2c7;--teal-deep:#0d857f;--orange:#ffc17c;--violet:#ac9ffd;--white:#fff;--font:'Manrope','DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button{cursor:pointer}input[type=range]{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--teal);outline-offset:3px}button:disabled{opacity:.45;cursor:default}h1,h2,h3,p{margin:0}h2{font-size:22px;letter-spacing:-.75px;font-weight:800;line-height:1.25}h3{font-size:13px;font-weight:800}p{line-height:1.6}strong{font-weight:800}.page-width{width:min(1540px,calc(100% - 64px));margin-inline:auto}.background-glow{pointer-events:none;position:absolute;inset:0 0 auto 0;height:750px;background:radial-gradient(ellipse at 79% 0%,rgba(52,125,139,.17),transparent 45%),radial-gradient(ellipse at 25% 15%,rgba(100,79,176,.13),transparent 40%);z-index:-1}
+.topbar{height:86px;display:flex;justify-content:space-between;align-items:center;padding:0 max(32px,calc((100vw - 1540px)/2));border-bottom:1px solid #1c2a3e;gap:18px}.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}.brand-mark{width:43px;height:43px;border:1px solid #2f5566;background:#153442;border-radius:12px;position:relative}.mark-dot{width:12px;height:12px;background:var(--teal);border-radius:50%;position:absolute;top:10px;left:9px;box-shadow:0 0 15px #56e2c766}.mark-dot.second{top:23px;left:24px;background:var(--violet);box-shadow:0 0 13px #ac9ffd66}.mark-line{position:absolute;top:20px;left:17px;width:20px;height:3px;background:#d8e8ef;transform:rotate(36deg);border-radius:4px}.brand-title{font-size:18px;font-weight:800;letter-spacing:-.9px}.brand-title span{color:var(--teal)}.brand-sub{font-size:8px;letter-spacing:2.15px;color:var(--sub);font-weight:800;margin-top:1px}.topnav{display:flex;align-items:center;gap:9px}.local-pill{color:#9cbeb7;font-size:9px;letter-spacing:1px;font-weight:800;margin-right:15px;white-space:nowrap}.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin-right:7px;box-shadow:0 0 0 4px #56e2c71b}.btn{border:1px solid transparent;color:var(--text);font-size:11px;font-weight:800;letter-spacing:.1px;border-radius:10px;padding:12px 15px;transition:background .16s,transform .16s;white-space:nowrap}.btn:hover{transform:translateY(-1px)}.btn.ghost{background:transparent;color:var(--muted)}.btn.ghost:hover{color:white;background:#192336}.btn.outline{border-color:#34445b;background:#1b2535}.btn.outline:hover{background:#23344b}.btn.filled{background:var(--teal);color:#092623}.btn.filled:hover{background:#85eedb}.btn.mini{font-size:10px;padding:10px 12px}
+.hero{padding:43px 4px 48px;display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:center}.eyebrow,.section-kicker{font-size:10px;font-weight:800;letter-spacing:1.8px;color:var(--teal);line-height:1.3}.eyebrow{display:flex;align-items:center;gap:12px}.hero-line{width:28px;height:1px;background:var(--teal)}.hero h1{font-size:clamp(35px,4.2vw,64px);line-height:1.06;letter-spacing:-3px;font-weight:800;margin:18px 0 15px}.hero h1 em{font-style:normal;color:var(--teal)}.hero-copy p{max-width:620px;color:#a3b3c7;font-size:13px;line-height:1.85}.hero-notes{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.hero-notes span{font-size:9px;letter-spacing:1px;font-weight:800;color:#7f94ae;border:1px solid #25354a;border-radius:7px;padding:7px 9px}.hero-result{position:relative;isolation:isolate;overflow:hidden;padding:26px 31px 25px;min-height:214px;border:1px solid #28595c;border-radius:19px;background:linear-gradient(125deg,#173c42 0%,#182936 57%,#1f2949 120%);box-shadow:0 18px 70px #0002}.hero-result:after{content:'';position:absolute;z-index:-1;width:200px;height:200px;border:1px solid #ffffff12;border-radius:50%;top:-85px;right:-24px;box-shadow:0 0 0 30px #ffffff04,0 0 0 65px #ffffff04}.hero-result-top,.hero-result-bottom{display:flex;justify-content:space-between;gap:12px;align-items:center}.winner-indicator{font-size:10px;color:var(--teal);letter-spacing:1px;font-weight:800}.year-tag{font-size:9px;color:#bacbd5;letter-spacing:1.4px;font-weight:800}.hero-number{font-size:clamp(42px,4.1vw,67px);font-weight:800;letter-spacing:-3.5px;margin-top:10px;font-variant-numeric:tabular-nums}.hero-plan{font-size:13px;font-weight:700;color:#d7e9eb;line-height:1.4;margin-top:1px}.hero-result-bottom{border-top:1px solid #ffffff20;padding-top:17px;margin-top:19px;color:#8fbabb;font-size:11px}.tiny-spark{display:flex;gap:4px;align-items:end;height:22px}.tiny-spark i{display:inline-block;width:4px;background:#56e2c7aa;border-radius:2px;height:8px}.tiny-spark i:nth-child(2){height:17px}.tiny-spark i:nth-child(3){height:12px}.tiny-spark i:nth-child(4){height:19px}.tiny-spark i:nth-child(5){height:15px}.tiny-spark i:nth-child(6){height:22px}.tiny-spark i:nth-child(7){height:17px}
+.layout{display:grid;grid-template-columns:330px minmax(0,1fr);align-items:start;gap:24px;padding-bottom:70px}.sidebar{position:sticky;top:14px;max-height:calc(100vh - 28px);overflow:auto;scrollbar-width:thin;scrollbar-color:#33485b transparent;padding-right:3px}.sidebar-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;padding:0 4px}.sidebar-heading h2{font-size:21px;margin-top:5px}.sliders-icon{font-size:23px;color:var(--teal);transform:rotate(90deg)}.panel{background:linear-gradient(160deg,#182234,#141d2b);border:1px solid var(--line);border-radius:15px}.sidebar .panel{margin-bottom:13px}.panel-top{display:flex;align-items:center;justify-content:space-between;padding:17px 17px 13px}.micro-label{font-size:8px;letter-spacing:.8px;font-weight:800;color:var(--sub)}.preset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:0 15px 16px}.preset{border:1px solid #314057;border-radius:9px;background:#192538;padding:11px 9px;text-align:left;color:#dae6f6;min-height:54px;transition:background .14s,border-color .14s}.preset:hover{border-color:#4e6c78;background:#23344a}.preset.active{border-color:var(--teal);background:#143c40;box-shadow:inset 0 0 0 1px #56e2c72c}.preset-name{display:block;font-size:10.5px;font-weight:800;line-height:1.35}.preset-sub{display:block;color:#8ca4b9;font-size:9px;margin-top:5px;line-height:1.25}.preset.active .preset-sub{color:#a0d8d0}.group-details{border-top:1px solid #273449}.group-details:first-of-type{border-top:0}.group-details>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 17px;color:#e8f0fc;font-weight:800;font-size:12px}.group-details>summary::-webkit-details-marker,details>summary::-webkit-details-marker{display:none}.group-icon{height:26px;width:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:14px}.group-icon.baby{background:#3e3552;color:var(--violet)}.group-icon.wife{background:#443744;color:#ffbd9c}.group-icon.you{background:#254849;color:var(--teal)}.chevron{margin-left:auto;border-right:2px solid #788ba2;border-bottom:2px solid #788ba2;transform:rotate(45deg);width:7px;height:7px;transition:transform .2s}details[open] .chevron{transform:rotate(225deg)}.slider-group{padding:0 17px 18px}.slider-control{padding:10px 0 13px;border-top:1px solid #263449}.slider-control:first-child{border-top:0}.slider-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}.slider-title{font-size:11px;color:#c6d2e3;font-weight:700}.slider-value{color:var(--teal);font-weight:800;font-size:11px;white-space:nowrap;font-variant-numeric:tabular-nums}.slider-helper{color:#708197;font-size:9px;margin-top:4px;line-height:1.4}.range-wrap{display:flex;gap:10px;align-items:center}.range-wrap input[type=range],.settings-body input[type=range]{appearance:none;height:5px;background:linear-gradient(90deg,var(--teal) 0%,var(--teal) var(--percent,50%),#324257 var(--percent,50%),#324257 100%);border-radius:50px;flex:1;min-width:0}.range-wrap input[type=range]::-webkit-slider-thumb,.settings-body input[type=range]::-webkit-slider-thumb{appearance:none;width:14px;height:14px;border-radius:50%;background:#d8fff6;border:3px solid var(--teal-deep);box-shadow:0 0 0 2px #ffffff14}.range-wrap input[type=range]::-moz-range-thumb,.settings-body input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#d8fff6;border:3px solid var(--teal-deep)}.slider-number{width:66px;min-width:66px;border:1px solid #314057;background:#121b29;color:#f7fbff;border-radius:7px;padding:6px 3px;text-align:center;font-size:10px;font-weight:800;font-variant-numeric:tabular-nums;outline:none}.slider-number::-webkit-inner-spin-button{opacity:.3}.settings-summary{list-style:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:17px}.settings-summary h3{margin-top:4px;font-size:12px}.settings-body{padding:0 17px 16px}.settings-line{display:flex;justify-content:space-between;gap:10px;font-size:10.5px;color:#c2d1e1;margin:15px 0 8px}.settings-body>input[type=range]{width:100%;display:block;margin-bottom:12px}.settings-body select,.chart-control select{width:100%;appearance:none;background:#111c2c;color:#e4f2ff;border:1px solid #314258;border-radius:8px;padding:10px 12px;font-size:11px}.settings-note{font-size:10px;color:#8499ae}.setting-divider{height:1px;background:#2a3a4b;margin:18px 0}.price-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.price-field{display:flex;flex-direction:column;gap:5px}.price-field label{font-size:9px;color:#90a4b8}.price-field input{min-width:0;width:100%;border-radius:8px;border:1px solid #314258;background:#111c2c;color:white;padding:9px 10px;font-size:12px}.sidebar-footnote{display:flex;align-items:flex-start;gap:9px;font-size:10px;color:#798ba3;padding:4px 8px 20px;line-height:1.7}.shield{font-size:21px;color:var(--teal);line-height:1}
+.content{min-width:0}.context-row{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:2px 0 17px}.view-switch{display:flex;align-items:center;gap:4px;background:#162030;border:1px solid #2a3950;border-radius:10px;padding:3px}.view-switch>span{font-size:9px;font-weight:800;letter-spacing:1px;color:#64768e;margin:0 9px}.switch{border:0;color:#94a7b9;background:transparent;border-radius:7px;padding:9px 12px;font-size:10px;font-weight:800}.switch.active{background:#29443f;color:var(--teal)}.metrics-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:21px}.metric-card{min-height:122px;padding:21px 19px;background:linear-gradient(150deg,#1b2534,#151d2b);border:1px solid #29374a;border-radius:13px}.metric-card.accent-card{background:linear-gradient(135deg,#1a3437,#182733);border-color:#2b5a58}.metric-label{font-size:9px;font-weight:800;letter-spacing:1.15px;color:#99aabc;line-height:1.4;display:flex;gap:7px}.metric-label span{cursor:help}.metric-value{font-size:clamp(21px,2.1vw,34px);font-weight:800;margin-top:8px;letter-spacing:-1.2px;font-variant-numeric:tabular-nums}.metric-card.accent-card .metric-value{color:var(--teal)}.metric-foot{color:#8798ae;font-size:10px;margin-top:5px}.chart-panel,.breakdown-panel,.crossover-panel,.person-panel,.matrix-panel,.notes-panel{padding:25px;margin-bottom:20px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:23px}.section-heading h2{margin-top:7px}.section-heading p{font-size:11px;color:#8799ad;margin-top:7px}.chart-control{display:flex;align-items:center;gap:10px}.chart-control label{font-size:10px;color:#8193aa}.chart-control select{width:184px;padding:10px 12px;background:#151f2e}.chart-legend{display:flex;gap:20px;align-items:center;font-size:10px;color:#8a9aaf;margin-bottom:22px}.chart-legend>span{display:flex;align-items:center;gap:7px}.legend-hint{margin-left:auto}.legend-dot{display:inline-block;width:9px;height:9px;background:#6b7b91;border-radius:50%;flex-shrink:0}.legend-dot.winner{background:var(--teal)}.legend-dot.selected{background:#778ce9}.legend-dot.premium{background:#7187f5}.legend-dot.member{background:#e8a26c}.legend-dot.copay{background:#a99bfd}.legend-dot.coins{background:#e5c0a7}.legend-dot.hsa{background:#56e2c7}.plan-bars{display:flex;flex-direction:column;gap:5px}.plan-row{width:100%;border:1px solid transparent;border-radius:9px;display:grid;grid-template-columns:minmax(210px,37%) minmax(0,1fr) 92px;gap:11px;align-items:center;background:transparent;color:#d6e2f1;text-align:left;padding:9px 10px;min-height:48px;transition:border-color .12s,background .12s}.plan-row:hover{border-color:#355164;background:#1c293b}.plan-row.selected{border-color:#5974a9;background:#1c2d44}.plan-row.winner-row{background:#153333}.plan-row.winner-row.selected{border-color:#55b9ad;background:#194042}.plan-label{font-size:10.5px;font-weight:800;line-height:1.35}.plan-badge{display:inline-block;font-size:8px;letter-spacing:.7px;color:var(--teal);margin-left:7px;vertical-align:middle}.plan-bar-track{height:13px;border-radius:50px;background:#27364a;overflow:hidden;position:relative}.plan-bar-fill{height:100%;border-radius:50px;background:linear-gradient(90deg,#4e6388,#8ca2d1);min-width:2px;transition:width .19s ease}.winner-row .plan-bar-fill{background:linear-gradient(90deg,#268e91,#5fe6c8)}.plan-row.selected:not(.winner-row) .plan-bar-fill{background:linear-gradient(90deg,#5469bf,#a49dff)}.plan-value{text-align:right;font-size:12px;font-weight:800;letter-spacing:-.2px;white-space:nowrap;font-variant-numeric:tabular-nums}.winner-row .plan-value{color:var(--teal)}.chart-axis{display:flex;justify-content:space-between;font-size:9px;color:#718198;margin:13px 96px 0 38%;padding-left:11px}.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.duo-grid>.panel{margin-bottom:20px}.breakdown-panel h2,.crossover-panel h2{margin:7px 0}.subline{color:#96a9be;font-size:11px;margin-bottom:18px;max-width:520px}.selected-total-row{background:#202c40;border:1px solid #3a5069;padding:14px;border-radius:9px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#a6b8cc}.selected-total-row strong{color:white;font-size:24px;letter-spacing:-1px;font-variant-numeric:tabular-nums}.cost-stripes{padding:13px 0}.cost-line{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:8px 0;font-size:10.5px;color:#b5c4d5}.cost-line span{display:flex;align-items:center;gap:8px}.cost-line strong{color:#f5f9ff;font-size:11px;font-variant-numeric:tabular-nums}.cost-line.hsa-line strong{color:var(--teal)}.composition-track{height:13px;border-radius:30px;display:flex;background:#253449;overflow:hidden;margin:3px 0 13px}.composition-track span{height:100%;min-width:0}.cost-footnote{font-size:9px;color:#7d90a9;line-height:1.7}.crossover-callout{font-size:12px;line-height:1.55;padding:13px 15px;background:#173134;border:1px solid #28545b;border-radius:9px;color:#cce5df;margin-bottom:18px;min-height:74px}.crossover-callout strong{color:var(--teal)}.crossover-callout .highlight{font-size:22px;letter-spacing:-.7px;font-weight:800;color:#edfff9}.line-graph{width:100%;height:180px;margin-top:2px}.line-graph svg{width:100%;height:100%;overflow:visible}.graph-key{display:flex;gap:18px;font-size:10px;color:#9badc2;justify-content:center;margin:1px 0 13px}.graph-key>span{display:flex;align-items:center;gap:6px}.line-key{height:3px;width:17px;display:inline-block;border-radius:2px}.line-key.teal{background:var(--teal)}.line-key.orange{background:var(--orange)}.graph-caption{font-size:9px;color:#7f91a8;line-height:1.7}.graph-caption strong{color:#b8c5d2}.person-panel{margin-top:0}.table-scroll{overflow:auto;scrollbar-width:thin;scrollbar-color:#39495d transparent}.data-table{border-collapse:collapse;width:100%;min-width:690px;font-size:10.5px;text-align:right;font-variant-numeric:tabular-nums}.data-table thead th{text-align:right;font-size:9px;font-weight:800;letter-spacing:.5px;color:#889eb5;padding:12px 12px;border-bottom:1px solid #3d4e62;white-space:nowrap}.data-table thead th:first-child,.data-table td:first-child{text-align:left}.data-table td{padding:14px 12px;border-bottom:1px solid #28384e;color:#d3e0ed;white-space:nowrap}.data-table tbody tr:hover{background:#203047}.data-table tbody td:first-child{font-weight:800}.data-table tfoot td{color:var(--teal);font-weight:800;border-top:1px solid #3b5a60;border-bottom:none}.selected-mini{font-size:10px;color:var(--teal);text-align:right;max-width:250px}.explain-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}.explain-tag{border:1px solid #31445a;background:#172337;color:#9cacc0;border-radius:6px;padding:7px 10px;font-size:10px}.explain-tag strong{color:white}.matrix-content[hidden]{display:none}.matrix-table{min-width:1330px}.matrix-table td,.matrix-table th{padding:10px 8px}.matrix-table thead th:first-child{position:sticky;left:0;background:#182336;min-width:230px;z-index:2}.matrix-table td:first-child{position:sticky;left:0;background:#192437;min-width:230px;z-index:1}.matrix-table td{cursor:pointer;transition:background .1s}.matrix-table td:not(:first-child):hover{background:#33475d}.matrix-table td.best-cell{color:var(--teal);font-weight:800;background:#173836}.matrix-table td.best-cell:hover{background:#28554c}.tiny-note{margin-top:12px;font-size:10px;color:#8195a9}.notes-panel{background:linear-gradient(150deg,#172235,#131b28)}.notes-panel h2{margin:7px 0 20px}.notes-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 26px}.notes-grid p{font-size:10.5px;color:#8c9fb4;line-height:1.8}.notes-grid strong{color:#d2dfef}.source-line{border-top:1px solid #28384f;margin-top:22px;padding-top:15px;font-size:10px;color:#8295a9}.source-line strong{color:#adc4c7}.site-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:9px;letter-spacing:1px;color:#6f869b;font-weight:800;margin:5px 2px}.site-footer button{border:0;background:transparent;color:var(--teal);font-size:10px;font-weight:800}.site-footer button:hover{text-decoration:underline}.toast{position:fixed;bottom:25px;right:25px;z-index:100;background:#153f3d;border:1px solid #5bbfb1;color:#d8fff6;border-radius:10px;padding:12px 19px;font-size:12px;font-weight:700;box-shadow:0 12px 50px #0006;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .2s,transform .2s}.toast.show{opacity:1;transform:translateY(0)}
+@media(min-width:1550px){.layout{grid-template-columns:355px minmax(0,1fr)}.hero h1{font-size:65px}}
+@media(max-width:1250px){.page-width{width:calc(100% - 42px)}.topbar{padding:0 21px}.layout{grid-template-columns:300px minmax(0,1fr);gap:16px}.metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{gap:20px}.duo-grid{grid-template-columns:1fr}.plan-row{grid-template-columns:minmax(175px,45%) minmax(0,1fr) 78px}.chart-axis{margin-left:46%;margin-right:78px}.local-pill{display:none}}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:30px}.hero h1{font-size:48px}.layout{display:block}.sidebar{position:static;max-height:none;overflow:visible;padding-right:0;margin-bottom:28px}.sidebar .panel{max-width:none}.preset-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.sidebar-heading{margin-top:5px}.topnav .btn{padding:10px 12px}.sidebar-footnote{display:none}}
+@media(max-width:560px){.page-width{width:calc(100% - 24px)}.topbar{padding:0 12px;height:72px}.brand-title{font-size:15px}.brand-sub{font-size:7px;letter-spacing:1.2px}.brand-mark{width:35px;height:35px}.brand-mark .mark-dot{transform:scale(.8)}.topnav{gap:3px}.topnav .btn.ghost{display:none}.topnav .btn{font-size:10px;padding:9px 8px}.hero{padding:27px 2px 27px}.hero h1{font-size:37px;letter-spacing:-1.8px}.hero-copy p{font-size:12px}.hero-notes{gap:6px}.hero-notes span{font-size:8px}.hero-result{padding:20px;min-height:190px}.hero-number{font-size:48px}.preset-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.context-row{align-items:flex-start;flex-direction:column}.view-switch{width:100%;justify-content:space-between}.metrics-grid{gap:9px}.metric-card{padding:15px 12px;min-height:106px}.metric-value{font-size:23px}.metric-label{font-size:8px}.chart-panel,.breakdown-panel,.crossover-panel,.person-panel,.matrix-panel,.notes-panel{padding:16px}.section-heading{flex-direction:column;align-items:start;gap:10px}.chart-control{width:100%}.chart-control select{flex:1;width:auto}.plan-row{grid-template-columns:minmax(138px,54%) minmax(0,1fr) 62px;gap:6px;padding:10px 4px}.plan-label{font-size:9px}.plan-value{font-size:10px}.plan-bar-track{height:10px}.chart-axis{margin-left:56%;margin-right:64px}.chart-legend{gap:11px;flex-wrap:wrap;font-size:9px}.legend-hint{display:none}.notes-grid{grid-template-columns:1fr}.site-footer{flex-wrap:wrap}.selected-total-row strong{font-size:21px}}
+@media print{body{background:white;color:#111}.topbar,.sidebar,.view-switch,.btn,.chart-control,.site-footer,.toast{display:none!important}.layout{display:block}.hero{padding:15px 0}.hero-copy p,.hero-notes,.background-glow{display:none}.hero h1{font-size:30px}.hero-result{min-height:100px;padding:14px}.page-width{width:100%}.content>.panel,.duo-grid>.panel{background:white;color:#111;box-shadow:none;border:1px solid #aaa;break-inside:avoid}.metric-card{background:#fff;color:#111}.plan-row,.data-table td{color:#222}.chart-panel{break-after:page}}
+.care-tag{display:block;color:#7995aa;font-size:9px;font-weight:600;margin-top:3px}.care-tag:empty{display:none}
+
+</style>
+  
+  
+</head>
+<body>
+  <div class="background-glow"></div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true"><span class="mark-dot"></span><span class="mark-line"></span><span class="mark-dot second"></span></div>
+      <div><div class="brand-title">Benefit<span>Lab</span></div><div class="brand-sub">2027 FAMILY HEALTHCARE</div></div>
+    </div>
+    <nav class="topnav" aria-label="Main navigation">
+      <span class="local-pill"><span class="live-dot"></span>INPUTS STAY IN YOUR BROWSER</span>
+      <button id="resetBtn" class="btn ghost" type="button" title="Restore the baby-heavy scenario and default assumptions">↺ Reset</button>
+      <button id="exportBtn" class="btn outline" type="button">⇩ Export CSV</button>
+      <button id="saveBtn" class="btn filled" type="button">Save scenario <span aria-hidden="true">↗</span></button>
+      <input id="importFile" type="file" accept="application/json,.json" hidden>
+    </nav>
+  </header>
+
+  <section class="hero page-width">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="hero-line"></span> AN INTERACTIVE BENEFITS DECISION ENGINE</div>
+      <h1>Find the plan that<br><em>actually pays off.</em></h1>
+      <p>Move the sliders. See what your family pays, where the deductible goes, and exactly when a PPO becomes worth it.</p>
+      <div class="hero-notes"><span>2 ADULTS + 1 BABY</span><span>12 COVERAGE COMBINATIONS</span><span>2027 PLAN RULES</span></div>
+    </div>
+    <div class="hero-result" aria-live="polite">
+      <div class="hero-result-top"><span class="winner-indicator">● LOWEST MODELED COST</span><span class="year-tag">PER YEAR</span></div>
+      <div class="hero-number" id="bestCost">$—</div>
+      <div id="bestPlan" class="hero-plan">Calculating your options…</div>
+      <div class="hero-result-bottom"><span id="heroGap">Compare 12 combinations</span><span class="tiny-spark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    </div>
+  </section>
+
+  <div class="layout page-width">
+    <aside class="sidebar">
+      <div class="sidebar-heading"><div><div class="section-kicker">01 / SCENARIO BUILDER</div><h2>Adjust your year</h2></div><span class="sliders-icon" aria-hidden="true">≡</span></div>
+      <div class="panel preset-panel">
+        <div class="panel-top"><h3>Start with a scenario</h3><span id="presetStatus" class="micro-label">BABY-HEAVY</span></div>
+        <div class="preset-grid" id="presetGrid" aria-label="Preset scenarios"></div>
+      </div>
+      <div class="panel sliders-panel">
+        <div class="panel-top"><h3>Medical usage</h3><span class="micro-label">MOVE THE SLIDERS</span></div>
+        <details class="group-details" open><summary><span class="group-icon baby">✳</span><span>Baby's care</span><span class="chevron"></span></summary><div class="slider-group" id="babyControls"></div></details>
+        <details class="group-details"><summary><span class="group-icon wife">◑</span><span>Wife's care</span><span class="chevron"></span></summary><div class="slider-group" id="wifeControls"></div></details>
+        <details class="group-details"><summary><span class="group-icon you">◯</span><span>Your care</span><span class="chevron"></span></summary><div class="slider-group" id="youControls"></div></details>
+      </div>
+      <div class="panel assumptions-panel">
+        <details id="assumptionDetails"><summary class="settings-summary"><div><div class="section-kicker">CUSTOMIZE THE MODEL</div><h3>Plan & price assumptions</h3></div><span class="chevron"></span></summary>
+          <div class="settings-body">
+            <label class="settings-line" for="rewardInput"><span>Dell wellness discount / adult</span><strong id="rewardValue">$900</strong></label>
+            <input id="rewardInput" type="range" min="0" max="900" step="100" value="900">
+            <label class="settings-line" for="surchargeSelect"><span>Dell working-spouse surcharge</span></label>
+            <select id="surchargeSelect"><option value="1196">$1,196 / year</option><option value="1560">$1,560 / year</option></select>
+            <label class="settings-line" for="optoutSelect"><span>Cedar opt-out credit</span></label>
+            <select id="optoutSelect"><option value="1500">$1,500 / year</option><option value="0">Not available</option></select>
+            <div class="setting-divider"></div>
+            <p class="settings-note">Illustrative in-network negotiated prices per service. Edit any number.</p>
+            <div id="priceControls" class="price-controls"></div>
+          </div>
+        </details>
+      </div>
+      <div class="sidebar-footnote"><span class="shield">◇</span> All calculations run locally. No accounts, sign-in, or data upload needed.</div>
+    </aside>
+
+    <main class="content">
+      <div class="context-row"><span class="section-kicker">02 / LIVE RESULTS</span><div class="view-switch"><span>VIEW</span><button id="viewEconomic" type="button" class="switch active">Net economic</button><button id="viewCash" type="button" class="switch">Cash paid</button></div></div>
+      <div class="metrics-grid">
+        <div class="metric-card"><div class="metric-label">NEGOTIATED CHARGES <span title="Illustrative nonpreventive provider charges before the insurer's payments">ⓘ</span></div><div class="metric-value" id="chargesVal">$—</div><div class="metric-foot" id="claimsCount">Nonpreventive care</div></div>
+        <div class="metric-card"><div class="metric-label">LOWEST MEDICAL BILL</div><div class="metric-value" id="oopVal">$—</div><div class="metric-foot">Under winning plan</div></div>
+        <div class="metric-card"><div class="metric-label">EMPLOYER HSA <span title="Deposits are savings assets, not cash premium rebates">ⓘ</span></div><div class="metric-value" id="hsaVal">$—</div><div class="metric-foot">Under winning plan</div></div>
+        <div class="metric-card accent-card"><div class="metric-label">ADVANTAGE VS. RUNNER-UP</div><div class="metric-value" id="savingsVal">$—</div><div class="metric-foot">Annual model difference</div></div>
+      </div>
+
+      <section class="panel chart-panel">
+        <div class="section-heading"><div><div class="section-kicker">COST COMPARISON / LIVE</div><h2>Every plan, ranked.</h2><p>Choose any row to inspect the exact deductible and copay math.</p></div><div class="chart-control"><label for="filterSelect">Show</label><select id="filterSelect"><option value="all">All 12 options</option><option value="split">Split between employers</option><option value="family">Single-family plan</option><option value="babyDell">Baby on Dell</option><option value="babyCedar">Baby on Cedar</option></select></div></div>
+        <div class="chart-legend"><span><i class="legend-dot winner"></i> Lowest net cost</span><span><i class="legend-dot selected"></i> Selected for details</span><span class="legend-hint">Tap a row to explore</span></div>
+        <div id="planBars" class="plan-bars" role="list" aria-label="Annual plan cost ranking"></div>
+        <div class="chart-axis" id="barAxis"></div>
+      </section>
+
+      <section class="duo-grid">
+        <section class="panel breakdown-panel">
+          <div class="section-kicker">03 / WHERE THE MONEY GOES</div>
+          <h2>Cost anatomy</h2>
+          <p class="subline" id="selectedTitle">Selected plan</p>
+          <div class="selected-total-row"><span>Annual modeled cost</span><strong id="detailTotal">$—</strong></div>
+          <div class="cost-stripes">
+            <div class="cost-line"><span><i class="legend-dot premium"></i> Adjusted premiums</span><strong id="breakPremium">$—</strong></div>
+            <div class="cost-line"><span><i class="legend-dot member"></i> Deductible paid</span><strong id="breakDed">$—</strong></div>
+            <div class="cost-line"><span><i class="legend-dot copay"></i> Copays</span><strong id="breakCopay">$—</strong></div>
+            <div class="cost-line"><span><i class="legend-dot coins"></i> Coinsurance</span><strong id="breakCoins">$—</strong></div>
+            <div class="cost-line hsa-line"><span><i class="legend-dot hsa"></i> Employer HSA savings</span><strong id="breakHsa">−$—</strong></div>
+          </div>
+          <div class="composition-track" id="costComposition" aria-label="Composition of premium plus medical out-of-pocket cost"></div>
+          <div class="cost-footnote" id="breakEquation">Premiums + deductible + copays + coinsurance − HSA = net cost</div>
+        </section>
+        <section class="panel crossover-panel">
+          <div class="section-kicker">04 / PPO BREAK-EVEN</div>
+          <h2>When does PPO win?</h2>
+          <p class="subline">Same Cedar HDHP for you; Dell HDHP vs PPO for wife + baby.</p>
+          <div id="crossoverMessage" class="crossover-callout">Calculating crossover…</div>
+          <div class="line-graph" id="crossoverGraph" role="img" aria-label="Projected annual costs as additional baby surgery charges increase"></div>
+          <div class="graph-key"><span><i class="line-key teal"></i> Dell HDHP</span><span><i class="line-key orange"></i> Dell PPO</span></div>
+          <div class="graph-caption">X-axis = <strong>additional negotiated baby surgery charges</strong> above the current sliders, not what you pay.</div>
+        </section>
+      </section>
+
+      <section class="panel person-panel">
+        <div class="section-heading"><div><div class="section-kicker">05 / PERSON-BY-PERSON</div><h2>Who pays what?</h2><p>Your medical bills are split into deductible, copays, and coinsurance.</p></div><div class="selected-mini" id="personPlanName"></div></div>
+        <div class="table-scroll"><table class="data-table" id="personTable"><thead><tr><th>Covered member</th><th>Negotiated charges</th><th>Deductible paid</th><th>Copays</th><th>Coinsurance</th><th>Your medical bill</th><th>Insurer pays</th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+        <div class="explain-row" id="planLimitSummary"></div>
+      </section>
+
+      <section class="panel matrix-panel" id="matrixSection">
+        <div class="section-heading"><div><div class="section-kicker">06 / MULTI-SCENARIO VIEW</div><h2>Every test scenario, one grid.</h2><p>Preset assumptions are based on the uploaded comparison workbook. Click a figure to load it into the simulator.</p></div><button id="matrixToggle" type="button" class="btn outline mini" aria-expanded="false">Show scenario grid ↓</button></div>
+        <div id="matrixContent" class="matrix-content" hidden><div class="table-scroll"><table class="data-table matrix-table" id="matrixTable"></table></div><p class="tiny-note">Highlighted cells are the cheapest option in each scenario. Prices and wellness settings above also affect this grid.</p></div>
+      </section>
+
+      <section class="panel notes-panel">
+        <div class="section-kicker">METHODOLOGY & SOURCES</div><h2>Designed for decisions, not surprises.</h2>
+        <div class="notes-grid"><p><strong>What is modeled:</strong> 2027 employee premiums, Dell wellness discounts and working-spouse surcharge, Cedar medical opt-out credit, employer HSA deposits, individual/family deductibles, copays, coinsurance and in-network out-of-pocket caps.</p>
+        <p><strong>What is illustrative:</strong> Visit counts and negotiated service charges. Preventive well-child visits and recommended vaccines are modeled as $0 member cost. Services are processed in a consistent order; actual claim dates and service classifications can change results.</p>
+        <p><strong>HSA accounting:</strong> "Net economic" subtracts employer HSA deposits as retained savings value; "Cash paid" does not. Your own HSA contributions are not a medical cost or a rebate and are not modeled here.</p>
+        <p><strong>Important limitations:</strong> Only covered, in-network care. Excludes out-of-network and noncovered charges, separate facility fees beyond the specified assumptions, employer payroll taxes, personal HSA tax deductions, coordination-of-benefits rules and plan-specific special programs.</p></div>
+        <p class="source-line">Sources: Cedar Cares 2027 Benefits Guide pp. 14–15 and Cigna HDHP/PPO summaries; Dell 2027 Benefits Summary pp. 2–5, 11 and 2027 Enrollment Guide pp. 9–12; the uploaded family comparison workbook. <strong>Planning model only—verify exact carrier claim rules before electing.</strong></p>
+      </section>
+      <footer class="site-footer"><span>BENEFITLAB / 2027</span><span>BUILT FOR YOUR FAMILY · NO DATA LEAVES THIS PAGE</span><button id="importBtn" type="button">Import a saved scenario ↑</button></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+/* 2027 Cedar Cares × Dell family benefits — standalone, deterministic model.
+   Uses family-specific 2027 plan schedules and simplified in-network cost sharing.
+   This is a planning model, not a claims-adjudication engine. */
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;root.BenefitEngine=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+'use strict';
+const EMPLOYEES=['you','wife','baby'];
+const PLANS=[
+ {id:'CH',label:'All three · Cedar HDHP',short:'All Cedar · HDHP',type:'HDHP',family:'Cedar',members:[{carrier:'C',type:'H',people:['you','wife','baby']}]},
+ {id:'CP',label:'All three · Cedar PPO',short:'All Cedar · PPO',type:'PPO',family:'Cedar',members:[{carrier:'C',type:'P',people:['you','wife','baby']}]},
+ {id:'DH',label:'All three · Dell Health Fund',short:'All Dell · HDHP',type:'HDHP',family:'Dell',members:[{carrier:'D',type:'H',people:['you','wife','baby']}]},
+ {id:'DP',label:'All three · Dell PPO',short:'All Dell · PPO',type:'PPO',family:'Dell',members:[{carrier:'D',type:'P',people:['you','wife','baby']}]},
+ {id:'SHH',label:'You Cedar HDHP · Wife + baby Dell HDHP',short:'You C HDHP · W+B D HDHP',type:'HDHP / HDHP',family:'Split',members:[{carrier:'C',type:'H',people:['you']},{carrier:'D',type:'H',people:['wife','baby']}]},
+ {id:'SHP',label:'You Cedar HDHP · Wife + baby Dell PPO',short:'You C HDHP · W+B D PPO',type:'HDHP / PPO',family:'Split',members:[{carrier:'C',type:'H',people:['you']},{carrier:'D',type:'P',people:['wife','baby']}]},
+ {id:'SPH',label:'You Cedar PPO · Wife + baby Dell HDHP',short:'You C PPO · W+B D HDHP',type:'PPO / HDHP',family:'Split',members:[{carrier:'C',type:'P',people:['you']},{carrier:'D',type:'H',people:['wife','baby']}]},
+ {id:'SPP',label:'You Cedar PPO · Wife + baby Dell PPO',short:'You C PPO · W+B D PPO',type:'PPO / PPO',family:'Split',members:[{carrier:'C',type:'P',people:['you']},{carrier:'D',type:'P',people:['wife','baby']}]},
+ {id:'BHH',label:'You + baby Cedar HDHP · Wife Dell HDHP',short:'You+B C HDHP · W D HDHP',type:'HDHP / HDHP',family:'Split',members:[{carrier:'C',type:'H',people:['you','baby']},{carrier:'D',type:'H',people:['wife']}]},
+ {id:'BHP',label:'You + baby Cedar HDHP · Wife Dell PPO',short:'You+B C HDHP · W D PPO',type:'HDHP / PPO',family:'Split',members:[{carrier:'C',type:'H',people:['you','baby']},{carrier:'D',type:'P',people:['wife']}]},
+ {id:'BPH',label:'You + baby Cedar PPO · Wife Dell HDHP',short:'You+B C PPO · W D HDHP',type:'PPO / HDHP',family:'Split',members:[{carrier:'C',type:'P',people:['you','baby']},{carrier:'D',type:'H',people:['wife']}]},
+ {id:'BPP',label:'You + baby Cedar PPO · Wife Dell PPO',short:'You+B C PPO · W D PPO',type:'PPO / PPO',family:'Split',members:[{carrier:'C',type:'P',people:['you','baby']},{carrier:'D',type:'P',people:['wife']}]}
+];
+const DEFAULT_PRICES={pediatric:175,adult:175,urgent:300,lab:160,babyRx:20,adultRx:25,pt:300};
+const DEFAULT_INPUT={well:6,babyPCP:10,babyUrgent:2,babyLabs:2,babyRx:3,youPCP:1,wifePCP:1,youRx:0,wifeRx:0,babyPT:0,wifePT:0,youPT:0,babySurgery:0,wifeSurgery:0,youSurgery:0,babyHospital:0};
+const DEFAULT_SETTINGS={prices:{...DEFAULT_PRICES},rewards:900,spouseSurcharge:1196,cedarOptOut:1500,includeHSA:true};
+const PRESETS=[
+ {id:'preventive',name:'Preventive only',mini:'Well visits + vaccines',input:{...DEFAULT_INPUT,babyPCP:0,babyUrgent:0,babyLabs:0,babyRx:0,youPCP:0,wifePCP:0}},
+ {id:'typical',name:'Typical year',mini:'5 baby sick visits',input:{...DEFAULT_INPUT,babyPCP:5,babyUrgent:1,babyLabs:1,babyRx:2,youPCP:1,wifePCP:1,wifeRx:1}},
+ {id:'babyHeavy',name:'Baby-heavy',mini:'10 sick + 2 urgent',input:{...DEFAULT_INPUT}},
+ {id:'daycare',name:'Frequent daycare',mini:'15 sick + 4 urgent',input:{...DEFAULT_INPUT,babyPCP:15,babyUrgent:4}},
+ {id:'babyHospital',name:'Baby hospitalization',mini:'+$12k on baby-heavy',input:{...DEFAULT_INPUT,babyHospital:12000}},
+ {id:'babySurgery',name:'Baby surgery',mini:'+$28k on typical',input:{...DEFAULT_INPUT,babyPCP:5,babyUrgent:1,babyLabs:1,babyRx:2,wifeRx:1,babySurgery:28000}},
+ {id:'youSurgery',name:'Your surgery',mini:'+$35k on typical',input:{...DEFAULT_INPUT,babyPCP:5,babyUrgent:1,babyLabs:1,babyRx:2,wifeRx:1,youSurgery:35000}},
+ {id:'wifeSurgery',name:'Wife surgery',mini:'+$35k on typical',input:{...DEFAULT_INPUT,babyPCP:5,babyUrgent:1,babyLabs:1,babyRx:2,wifeRx:1,wifeSurgery:35000}},
+ {id:'bothSurgery',name:'Both adults surgery',mini:'+$35k each',input:{...DEFAULT_INPUT,babyPCP:5,babyUrgent:1,babyLabs:1,babyRx:2,wifeRx:1,wifeSurgery:35000,youSurgery:35000}},
+ {id:'wifePT',name:'Wife physical therapy',mini:'48 × $300 on typical',input:{...DEFAULT_INPUT,babyPCP:5,babyUrgent:1,babyLabs:1,babyRx:2,wifeRx:1,wifePT:48}},
+ {id:'babyPT',name:'Baby physical therapy',mini:'20 × $300 on baby-heavy',input:{...DEFAULT_INPUT,babyPT:20}}
+];
+function priceFor(group){const count=group.people.length,carrier=group.carrier,t=group.type; if(carrier==='C')return (t==='H'?{1:60,2:275,3:405}:{1:120,2:435,3:665})[count]*12;
+ return (t==='H'?{1:81.48,2:132.15,3:228.66}:{1:115.92,2:189.80,3:327.60})[count]*26; }
+function rules(group){const c=group.carrier==='C',h=group.type==='H',f=group.people.length>1;
+ if(c&&h)return {ded:f?6000:3000,personDed:f?3500:3000,oop:f?12700:6350,personOop:6350,coin:.1};
+ if(c&&!h)return {ded:f?500:250,personDed: f?250:250,oop:f?5000:2500,personOop:2500,coin:.1};
+ if(!c&&h)return {ded:f?3500:1750,personDed:f?Infinity:1750,oop:f?7000:3500,personOop:f?7000:3500,coin:.15};
+ return {ded:f?1000:500,personDed:500,oop:f?6000:3000,personOop:3000,coin:.1};
+}
+function metadata(plan,settings){let premiums=0,hsa=0,wellness=0,surcharge=0,credit=0;
+ plan.members.forEach(g=>{premiums+=priceFor(g);if(g.carrier==='C'&&g.type==='H')hsa+=g.people.length>1?3000:1500;if(g.carrier==='D'){wellness+=settings.rewards*(g.people.includes('you')?2:1);if(g.people.includes('you')&&g.people.includes('wife'))surcharge=settings.spouseSurcharge;if(g.type==='H')hsa+=g.people.length>1?1500:750;}});
+ if(!plan.members.some(g=>g.carrier==='C')) credit=settings.cedarOptOut;
+ const netPremiums=premiums-wellness+surcharge-credit;
+ const deductible=plan.members.reduce((a,g)=>a+rules(g).ded,0);
+ const maxOOP=plan.members.reduce((a,g)=>a+rules(g).oop,0);
+ let hsaLimit=0;
+ const qualifying=plan.members.filter(g=>g.type==='H');
+ if(qualifying.length)hsaLimit=qualifying.some(g=>g.people.length>1)?9000:4500;
+ return {premiums,wellness,surcharge,credit,netPremiums,hsa,hsaLimit,deductible,maxOOP};
+}
+function claimsFrom(input,prices){const arr=[];
+ function add(person,type,charge,count){const n=Number(count)||0,p=Number(charge)||0;if(p<0||n<0)return;for(let i=0;i<Math.min(n,100);i++)arr.push({person,type,charge:p});}
+ // Routine, preventative well-baby exams/vaccinations are modeled as zero member cost; excluded from charge totals.
+ add('baby','pcp',prices.pediatric,input.babyPCP);add('baby','urgent',prices.urgent,input.babyUrgent);add('baby','lab',prices.lab,input.babyLabs);add('baby','rx',prices.babyRx,input.babyRx);
+ add('you','pcp',prices.adult,input.youPCP);add('you','rx',prices.adultRx,input.youRx);
+ add('wife','pcp',prices.adult,input.wifePCP);add('wife','rx',prices.adultRx,input.wifeRx);
+ add('baby','pt',prices.pt,input.babyPT);add('you','pt',prices.pt,input.youPT);add('wife','pt',prices.pt,input.wifePT);
+ add('baby','surgery',input.babySurgery,1);add('you','surgery',input.youSurgery,1);add('wife','surgery',input.wifeSurgery,1);
+ if(input.babyHospital>0){add('baby','hospitalFacility',input.babyHospital*.8,1);add('baby','hospitalProfessional',input.babyHospital*.2,1);}
+ return arr.filter(x=>x.charge>0);
+}
+function estimate(plan,input,settings){const meta=metadata(plan,settings);const claims=claimsFrom(input,settings.prices);
+ const groupState=plan.members.map(g=>({g,r:rules(g),ded:0,oop:0,per:Object.fromEntries(g.people.map(p=>[p,{ded:0,oop:0}]))}));
+ const totals={charges:0,deductible:0,copays:0,coinsurance:0,oop:0,insurer:0};
+ const persons=Object.fromEntries(EMPLOYEES.map(p=>[p,{charges:0,deductible:0,copays:0,coinsurance:0,oop:0,insurer:0}]));
+ const details=[];
+ for(const event of claims){const st=groupState.find(z=>z.g.people.includes(event.person)),{g,r}=st,ps=st.per[event.person],q=event.charge;let ded=0,cop=0,coins=0;
+ const isPPO=g.type==='P';const ppoCopay=isPPO?(g.carrier==='C'?{pcp:20,urgent:30,rx:10,pt:30}:{pcp:20,urgent:50,rx:8,pt:20}):{};
+ if(isPPO && ppoCopay[event.type]!=null){cop=Math.min(q,ppoCopay[event.type]);}
+ else if(isPPO && g.carrier==='C' && event.type==='hospitalFacility'){cop=Math.min(q,500);}
+ else {
+  const leftDed=Math.max(0,Math.min(r.ded-st.ded,r.personDed-ps.ded));
+  ded=Math.min(q,leftDed);
+  let rest=q-ded;
+  if(event.type==='rx'&&!isPPO){cop=Math.min(rest,g.carrier==='C'?10:8);}
+  else{coins=rest*r.coin;}
+ }
+ const allowable=Math.max(0,Math.min(r.oop-st.oop,r.personOop-ps.oop));
+ const wanted=ded+cop+coins;
+ if(wanted>allowable+1e-9){let remaining=allowable;
+  const spendDed=Math.min(ded,remaining);remaining-=spendDed;
+  const spendCop=Math.min(cop,remaining);remaining-=spendCop;
+  const spendCoins=Math.min(coins,remaining);
+  ded=spendDed;cop=spendCop;coins=spendCoins;
+ }
+ const member=ded+cop+coins;
+ st.ded+=ded;ps.ded+=ded;st.oop+=member;ps.oop+=member;
+ totals.charges+=q;totals.deductible+=ded;totals.copays+=cop;totals.coinsurance+=coins;totals.oop+=member;totals.insurer+=q-member;
+ const pt=persons[event.person];pt.charges+=q;pt.deductible+=ded;pt.copays+=cop;pt.coinsurance+=coins;pt.oop+=member;pt.insurer+=q-member;
+ details.push({person:event.person,carrier:g.carrier,plan:g.type,type:event.type,charge:q,deductible:ded,copay:cop,coinsurance:coins,member,insurer:q-member});
+ }
+ const net=meta.netPremiums+totals.oop-(settings.includeHSA?meta.hsa:0);
+ const worst=meta.netPremiums+meta.maxOOP-(settings.includeHSA?meta.hsa:0);
+ return {id:plan.id,plan,meta,totals,persons,details,net,worst,cash:meta.netPremiums+totals.oop,groupState};
+}
+function rank(input,settings){return PLANS.map(p=>estimate(p,input,settings)).sort((a,b)=>a.net-b.net);}
+function findCrossover(input,settings,sourceId,targetId,field,max=100000,step=100){const a=PLANS.find(p=>p.id===sourceId),b=PLANS.find(p=>p.id===targetId);const diff=x=>{const v={...input,[field]:(Number(input[field])||0)+x};return estimate(a,v,settings).net-estimate(b,v,settings).net;};let prev=diff(0);if(prev>0)return {already:true,threshold:0,difference:prev};for(let x=step;x<=max;x+=step){const cur=diff(x);if(cur>=0&&prev<0){let lo=x-step,hi=x;for(let k=0;k<22;k++){const mid=(lo+hi)/2;if(diff(mid)>=0)hi=mid;else lo=mid;}return {already:false,threshold:hi,difference:cur};}prev=cur;}return {already:false,threshold:null,difference:prev};}
+return {PLANS,EMPLOYEES,PRESETS,DEFAULT_PRICES,DEFAULT_INPUT,DEFAULT_SETTINGS,metadata,rules,claimsFrom,estimate,rank,findCrossover};
+});
+
+</script>
+<script>
+(function(){
+'use strict';
+const E=window.BenefitEngine;
+if(!E){document.body.innerHTML='<p>Could not load the calculation engine. Make sure engine.js is next to index.html.</p>';return;}
+const $=id=>document.getElementById(id);
+const fmt=n=>'$'+Math.round(n).toLocaleString('en-US');
+const fmtExact=n=>'$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const PERSON_LABEL={you:'You',wife:'Wife',baby:'Baby'};
+const CATEGORIES=[
+ {target:'babyControls',entries:[
+  ['well','Well-baby visits & vaccines',0,10,1,'Preventive: modeled as $0 to you'],
+  ['babyPCP','Sick pediatrician visits',0,30,1,'$175 each, before plan cost-sharing'],
+  ['babyUrgent','Urgent-care visits',0,12,1,'$300 each'],
+  ['babyLabs','Diagnostic labs / tests',0,15,1,'$160 each'],
+  ['babyRx','Generic prescriptions',0,24,1,'$20 each'],
+  ['babyPT','Office therapy sessions',0,60,1,'$300 per session'],
+  ['babyHospital','Hospitalization charges',0,100000,500,'80% facility / 20% physicians',true],
+  ['babySurgery','Outpatient surgery charges',0,100000,500,'Negotiated charge, not out-of-pocket',true]
+ ]},
+ {target:'wifeControls',entries:[
+  ['wifePCP','Sick primary-care visits',0,20,1,'$175 each'],
+  ['wifeRx','Generic prescriptions',0,24,1,'$25 each'],
+  ['wifePT','Office therapy sessions',0,60,1,'$300 each'],
+  ['wifeSurgery','Outpatient surgery charges',0,100000,500,'Negotiated amount',true]
+ ]},
+ {target:'youControls',entries:[
+  ['youPCP','Sick primary-care visits',0,20,1,'$175 each'],
+  ['youRx','Generic prescriptions',0,24,1,'$25 each'],
+  ['youPT','Office therapy sessions',0,60,1,'$300 each'],
+  ['youSurgery','Outpatient surgery charges',0,100000,500,'Negotiated amount',true]
+ ]}
+];
+const PRICE_FIELDS=[['pediatric','Baby sick visit'],['adult','Adult sick visit'],['urgent','Urgent care'],['lab','Diagnostic test'],['babyRx','Baby generic Rx'],['adultRx','Adult generic Rx'],['pt','Office therapy']];
+const STORAGE_KEY='benefitlab2027:local:v1';
+let state={input:{...E.DEFAULT_INPUT},settings:{...E.DEFAULT_SETTINGS,prices:{...E.DEFAULT_PRICES}},selected:'SHH',filter:'all',preset:'babyHeavy',matrixOpen:false};
+let renderScheduled=false;
+function clamp(value,min,max,step){let v=Number(value);if(!Number.isFinite(v))v=min;return Math.round(Math.max(min,Math.min(max,v))/step)*step;}
+function updateSliderPaint(el){el.style.setProperty('--percent',Math.max(0,Math.min(100,((Number(el.value)-Number(el.min))/(Number(el.max)-Number(el.min)||1))*100))+'%');}
+function buildControls(){
+ for(const cat of CATEGORIES){$(cat.target).innerHTML=cat.entries.map(([key,label,min,max,step,helper,isMoney])=>{
+ const v=state.input[key];return `<div class="slider-control" data-control="${key}"><div class="slider-head"><label class="slider-title" for="range_${key}">${label}</label><span class="slider-value" id="label_${key}">${isMoney?fmt(v):v+' '+(v===1?'visit':'visits')}</span></div><div class="range-wrap"><input aria-label="${label}" id="range_${key}" data-key="${key}" type="range" min="${min}" max="${max}" step="${step}" value="${v}"><input aria-label="Exact value for ${label}" id="num_${key}" data-key="${key}" class="slider-number" type="number" min="${min}" max="${max}" step="${step}" value="${v}"></div><div class="slider-helper">${helper}</div></div>`;
+ }).join('');}
+ document.querySelectorAll('.slider-control input').forEach(el=>{if(el.type==='range')updateSliderPaint(el);el.addEventListener(el.type==='range'?'input':'change',()=>{
+ const key=el.dataset.key,def=CATEGORIES.flatMap(x=>x.entries).find(x=>x[0]===key);if(!def)return;
+ const v=clamp(el.value,def[2],def[3],def[4]);state.input[key]=v;state.preset=null;
+ if(el.type==='range'){$('num_'+key).value=v;} else {$('range_'+key).value=v;}
+ updateSliderPaint($('range_'+key));$('label_'+key).textContent=def[6]?fmt(v):v+' '+(v===1?'visit':'visits');
+ renderPresetState();scheduleRender();
+ });});
+}
+function syncControls(){for(const cat of CATEGORIES)for(const [key,,,,,,isMoney] of cat.entries){
+ const v=state.input[key];$('range_'+key).value=v;$('num_'+key).value=v;$('label_'+key).textContent=isMoney?fmt(v):v+' '+(v===1?'visit':'visits');updateSliderPaint($('range_'+key));
+ }}
+function buildPresets(){$('presetGrid').innerHTML=E.PRESETS.map(p=>`<button type="button" class="preset" data-preset="${p.id}" title="${p.mini}"><span class="preset-name">${p.name}</span><span class="preset-sub">${p.mini}</span></button>`).join('');renderPresetState();}
+function renderPresetState(){document.querySelectorAll('.preset').forEach(el=>el.classList.toggle('active',el.dataset.preset===state.preset));$('presetStatus').textContent=state.preset?E.PRESETS.find(x=>x.id===state.preset)?.name.toUpperCase():'CUSTOM';}
+function setPreset(id){const p=E.PRESETS.find(x=>x.id===id);if(!p)return;state.input={...p.input};state.preset=p.id;syncControls();renderPresetState();scheduleRender();}
+function syncPriceHints(){const p=state.settings.prices,labels={babyPCP:`${fmt(p.pediatric)} each, before plan cost-sharing`,babyUrgent:`${fmt(p.urgent)} each`,babyLabs:`${fmt(p.lab)} each`,babyRx:`${fmt(p.babyRx)} each`,babyPT:`${fmt(p.pt)} per session`,wifePCP:`${fmt(p.adult)} each`,youPCP:`${fmt(p.adult)} each`,wifeRx:`${fmt(p.adultRx)} each`,youRx:`${fmt(p.adultRx)} each`,wifePT:`${fmt(p.pt)} each`,youPT:`${fmt(p.pt)} each`};for(const [key,label] of Object.entries(labels)){const el=document.querySelector(`[data-control="${key}"] .slider-helper`);if(el)el.textContent=label;}}
+function buildPrices(){$('priceControls').innerHTML=PRICE_FIELDS.map(([key,name])=>`<div class="price-field"><label for="price_${key}">${name}</label><input id="price_${key}" data-price="${key}" type="number" min="0" max="50000" step="5" value="${state.settings.prices[key]}"></div>`).join('');document.querySelectorAll('[data-price]').forEach(el=>el.addEventListener('input',()=>{const v=Number(el.value);if(!Number.isFinite(v)||v<0)return;state.settings.prices[el.dataset.price]=Math.min(50000,v);syncPriceHints();scheduleRender();}));}
+function syncSettings(){const r=$('rewardInput');r.value=state.settings.rewards;updateSliderPaint(r);$('rewardValue').textContent=fmt(state.settings.rewards);$('surchargeSelect').value=String(state.settings.spouseSurcharge);$('optoutSelect').value=String(state.settings.cedarOptOut);document.querySelectorAll('[data-price]').forEach(el=>el.value=state.settings.prices[el.dataset.price]);syncPriceHints();$('viewEconomic').classList.toggle('active',state.settings.includeHSA);$('viewCash').classList.toggle('active',!state.settings.includeHSA);}
+function settingsFromUI(){state.settings.rewards=Number($('rewardInput').value);state.settings.spouseSurcharge=Number($('surchargeSelect').value);state.settings.cedarOptOut=Number($('optoutSelect').value);$('rewardValue').textContent=fmt(state.settings.rewards);updateSliderPaint($('rewardInput'));scheduleRender();}
+function selectedData(){return E.estimate(E.PLANS.find(p=>p.id===state.selected),state.input,state.settings);}
+function scheduleRender(){if(renderScheduled)return;renderScheduled=true;requestAnimationFrame(()=>{renderScheduled=false;render();});}
+function render(){const ordered=E.rank(state.input,state.settings),best=ordered[0],second=ordered[1];
+ const charge=best.totals.charges;
+ $('bestCost').textContent=fmt(best.net);$('bestPlan').textContent=best.plan.label;$('heroGap').textContent=fmt(second.net-best.net)+' less than the next option';
+ $('chargesVal').textContent=fmt(charge);$('claimsCount').textContent=E.claimsFrom(state.input,state.settings.prices).length+' nonpreventive services';
+ $('oopVal').textContent=fmt(best.totals.oop);$('hsaVal').textContent=fmt(best.meta.hsa);$('savingsVal').textContent=fmt(second.net-best.net);
+ renderBars(ordered,best.id);renderDetails();renderCrossover();if(state.matrixOpen)renderMatrix();saveLocal();
+}
+function filtered(ordered){return ordered.filter(r=>{const m=r.plan.members;if(state.filter==='all')return true;if(state.filter==='split')return m.length===2;if(state.filter==='family')return m.length===1;const group=m.find(g=>g.people.includes('baby'));return state.filter==='babyDell'?group.carrier==='D':group.carrier==='C';});}
+function renderBars(ordered,bestId){const items=filtered(ordered);const max=Math.max(...items.map(d=>d.net),1000)*1.06;
+ $('planBars').innerHTML=items.map((r,i)=>{
+ const pct=Math.max(1,100*r.net/max);const winner=r.id===bestId;const selected=r.id===state.selected;
+ return `<button class="plan-row ${winner?'winner-row':''} ${selected?'selected':''}" type="button" role="listitem" data-plan="${r.id}" aria-pressed="${selected?'true':'false'}" title="Premiums: ${fmt(r.meta.netPremiums)} · Your medical bill: ${fmt(r.totals.oop)} · Employer HSA: ${fmt(r.meta.hsa)}"><span class="plan-label">${r.plan.short}${winner?'<span class="plan-badge">BEST</span>':''}</span><span class="plan-bar-track"><span class="plan-bar-fill" style="display:block;width:${pct.toFixed(2)}%"></span></span><span class="plan-value">${fmt(r.net)}</span></button>`;
+ }).join('');
+ $('barAxis').innerHTML=`<span>$0</span><span>${fmt(max/2)}</span><span>${fmt(max)}</span>`;
+}
+function renderDetails(){const r=selectedData(),m=r.meta,t=r.totals;
+ $('selectedTitle').textContent=r.plan.label;$('personPlanName').textContent=r.plan.type;
+ $('detailTotal').textContent=fmt(r.net);$('breakPremium').textContent=fmt(m.netPremiums);$('breakDed').textContent=fmt(t.deductible);$('breakCopay').textContent=fmt(t.copays);$('breakCoins').textContent=fmt(t.coinsurance);
+ $('breakHsa').textContent=state.settings.includeHSA?'−'+fmt(m.hsa):'+'+fmt(m.hsa)+' saved separately';
+ $('breakEquation').textContent=state.settings.includeHSA?'Premiums + deductible + copays + coinsurance − employer HSA value = net economic cost':'Premiums + deductible + copays + coinsurance = cash paid. Employer HSA deposits are shown separately.';
+ const parts=[['#7187f5',m.netPremiums],['#e8a26c',t.deductible],['#a99bfd',t.copays],['#e5c0a7',t.coinsurance]],denom=Math.max(1,parts.reduce((a,p)=>a+p[1],0));
+ $('costComposition').innerHTML=parts.filter(p=>p[1]>0).map(p=>`<span style="background:${p[0]};width:${(p[1]/denom*100).toFixed(2)}%" title="${fmt(p[1])}"></span>`).join('');
+ const money=['charges','deductible','copays','coinsurance','oop','insurer'];
+ const groups=E.EMPLOYEES.map(person=>{const g=r.plan.members.find(g=>g.people.includes(person));const pl=g.carrier==='C'?'Cedar': 'Dell';const typ=g.type==='H'?(g.carrier==='D'?'Health Fund':'HDHP'):'PPO';return {person,name:PERSON_LABEL[person]+' <span class="care-tag">'+pl+' '+typ+'</span>',vals:r.persons[person]};});
+ $('personTable').querySelector('tbody').innerHTML=groups.map(v=>'<tr><td>'+v.name+'</td>'+money.map(k=>'<td>'+fmt(v.vals[k])+'</td>').join('')+'</tr>').join('');
+ $('personTable').querySelector('tfoot').innerHTML='<tr><td>FAMILY TOTAL</td>'+money.map(k=>'<td>'+fmt(t[k])+'</td>').join('')+'</tr>';
+ $('planLimitSummary').innerHTML=r.plan.members.map(g=>{const v=E.rules(g);return `<span class="explain-tag"><strong>${g.carrier==='C'?'Cedar':'Dell'} ${g.type==='H'?'HDHP':'PPO'}</strong> · Deductible ${fmt(v.ded)} · Max OOP ${fmt(v.oop)}${g.people.length>1?` · Individual OOP ${fmt(v.personOop)}`:''}</span>`;}).join('')+`<span class="explain-tag">HSA annual household cap: <strong>${fmt(m.hsaLimit)}</strong></span>`;
+}
+function renderCrossover(){const h=E.PLANS.find(p=>p.id==='SHH'),p=E.PLANS.find(p=>p.id==='SHP'),baseInput=state.input,s=state.settings;
+ const h0=E.estimate(h,baseInput,s),p0=E.estimate(p,baseInput,s);
+ const crossing=E.findCrossover(baseInput,s,'SHH','SHP','babySurgery',80000,250);
+ const el=$('crossoverMessage');
+ if(crossing.already){el.innerHTML=`<strong>Dell PPO already wins</strong> for wife + baby by <span class="highlight">${fmt(h0.net-p0.net)}</span> under your current inputs.`;}
+ else if(crossing.threshold!==null){el.innerHTML=`Add about <span class="highlight">${fmt(crossing.threshold)}</span> in <strong>negotiated baby surgery charges</strong> and Dell PPO becomes cheaper than Dell Health Fund for wife + baby.`;}
+ else{el.innerHTML=`<strong>Dell Health Fund remains cheaper</strong> across the next $80,000 of additional baby surgery charges under your current assumptions.`;}
+ const maxX=40000;const samples=40;const hv=[],pv=[];
+ for(let i=0;i<=samples;i++){const x=i*maxX/samples,v={...baseInput,babySurgery:(Number(baseInput.babySurgery)||0)+x};hv.push(E.estimate(h,v,s).net);pv.push(E.estimate(p,v,s).net);}
+ const yMin=Math.floor(Math.min(...hv,...pv)/1000)*1000;const yMax=Math.ceil(Math.max(...hv,...pv)/1000)*1000+250;
+ const W=440,H=175,L=48,R=17,T=15,B=27,pw=W-L-R,ph=H-T-B;const xMap=x=>L+pw*x/maxX;const yMap=v=>T+ph*(1-(v-yMin)/(yMax-yMin||1));
+ const path=a=>a.map((v,i)=>(i?'L':'M')+xMap(i*maxX/samples).toFixed(1)+' '+yMap(v).toFixed(1)).join(' ');
+ let grid='';for(let i=0;i<=3;i++){const v=yMin+(yMax-yMin)*i/3,y=yMap(v);grid+=`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}" stroke="#34455a" stroke-dasharray="3 5"/><text x="${L-8}" y="${y+4}" text-anchor="end" fill="#8395a8" font-size="10">${fmt(v)}</text>`;}
+ for(let i=0;i<=4;i++){const x=i*10000;grid+=`<text x="${xMap(x)}" y="${H-5}" text-anchor="middle" fill="#8395a8" font-size="10">${i===0?'0':i*10+'k'}</text>`;}
+ let mark='';if(!crossing.already&&crossing.threshold!==null&&crossing.threshold<=maxX){const xx=xMap(crossing.threshold);mark=`<line x1="${xx}" x2="${xx}" y1="${T}" y2="${H-B}" stroke="#dceaf5" stroke-width="1" stroke-dasharray="4 4" opacity=".72"/><circle cx="${xx}" cy="${yMap(E.estimate(h,{...baseInput,babySurgery:baseInput.babySurgery+crossing.threshold},s).net)}" r="4.2" fill="#ffffff" stroke="#56e2c7" stroke-width="2"/>`;}
+ $('crossoverGraph').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Cost of Dell HDHP and PPO as negotiated baby surgery charges increase">${grid}<path fill="none" stroke="#56e2c7" stroke-width="3" d="${path(hv)}"/><path fill="none" stroke="#ffc17c" stroke-width="3" d="${path(pv)}"/>${mark}</svg>`;
+}
+function renderMatrix(){const p=E.PRESETS;const scenarios=p.map(x=>({preset:x,rank:E.rank(x.input,state.settings)}));
+ const headers='<thead><tr><th>FAMILY COVERAGE</th>'+p.map(x=>`<th title="${x.mini}">${x.name}</th>`).join('')+'</tr></thead>';
+ const body='<tbody>'+E.PLANS.map(plan=>'<tr><td>'+plan.short+'</td>'+scenarios.map(({preset,rank})=>{const r=rank.find(x=>x.id===plan.id),best=rank[0].id===plan.id;return `<td class="${best?'best-cell':''}" tabindex="0" role="button" data-matrix-plan="${plan.id}" data-matrix-preset="${preset.id}" title="Load ${preset.name} — ${plan.short}">${fmt(r.net)}${best?' ✦':''}</td>`;}).join('')+'</tr>').join('')+'</tbody>';
+ $('matrixTable').innerHTML=headers+body;
+}
+function saveLocal(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({input:state.input,settings:state.settings,selected:state.selected,preset:state.preset,filter:state.filter}));}catch(e){}}
+function loadLocal(){try{const raw=localStorage.getItem(STORAGE_KEY);if(raw)hydrate(JSON.parse(raw),false);}catch(e){}}
+function hydrate(data,refresh=true){if(!data||typeof data!=='object')return;
+ if(data.input&&typeof data.input==='object')for(const cfg of CATEGORIES)for(const entry of cfg.entries){const key=entry[0];if(data.input[key]!==undefined)state.input[key]=clamp(data.input[key],entry[2],entry[3],entry[4]);}
+ if(data.settings&&typeof data.settings==='object'){
+ const v=data.settings;if(Number.isFinite(Number(v.rewards)))state.settings.rewards=clamp(v.rewards,0,900,100);
+ if([1196,1560].includes(Number(v.spouseSurcharge)))state.settings.spouseSurcharge=Number(v.spouseSurcharge);
+ if([0,1500].includes(Number(v.cedarOptOut)))state.settings.cedarOptOut=Number(v.cedarOptOut);
+ if(typeof v.includeHSA==='boolean')state.settings.includeHSA=v.includeHSA;
+ if(v.prices&&typeof v.prices==='object')for(const [key] of PRICE_FIELDS){const val=Number(v.prices[key]);if(Number.isFinite(val)&&val>=0)state.settings.prices[key]=Math.min(val,50000);}
+ }
+ if(E.PLANS.some(p=>p.id===data.selected))state.selected=data.selected;
+ if(['all','split','family','babyDell','babyCedar'].includes(data.filter))state.filter=data.filter;
+ if(E.PRESETS.some(p=>p.id===data.preset))state.preset=data.preset;else state.preset=null;
+ if(refresh){syncControls();syncSettings();renderPresetState();$('filterSelect').value=state.filter;scheduleRender();}
+}
+let toastTimeout;
+function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>el.classList.remove('show'),2900);}
+function download(filename,content,mime){const blob=new Blob([content],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function saveScenario(){const data={version:1,title:'BenefitLab 2027 · Cedar and Dell family benefits',savedAt:new Date().toISOString(),input:state.input,settings:state.settings,selected:state.selected,filter:state.filter,preset:state.preset};download('benefitlab-2027-scenario.json',JSON.stringify(data,null,2),'application/json');toast('Scenario saved. Import this JSON file any time.');}
+function exportCSV(){const rows=[['Coverage','Annual adjusted premiums','Wellness discount','Dell working spouse surcharge','Cedar opt-out credit','Employer HSA','Aggregate deductible','Aggregate max OOP','Negotiated charges','Your deductible paid','Your copays','Your coinsurance','Your total medical bill','Insurer paid','Net annual economic cost','Cash paid']];
+ for(const r of E.rank(state.input,state.settings)){const v=r.meta,t=r.totals;rows.push([r.plan.label,v.netPremiums,v.wellness,v.surcharge,v.credit,v.hsa,v.deductible,v.maxOOP,t.charges,t.deductible,t.copays,t.coinsurance,t.oop,t.insurer,v.netPremiums+t.oop-v.hsa,r.cash]);}
+ download('benefitlab-2027-comparison.csv',rows.map(row=>row.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\r\n'),'text/csv;charset=utf-8');toast('Comparison downloaded as CSV.');}
+function init(){loadLocal();buildControls();buildPrices();buildPresets();syncSettings();$('filterSelect').value=state.filter;
+ $('presetGrid').addEventListener('click',evt=>{const el=evt.target.closest('[data-preset]');if(el)setPreset(el.dataset.preset);});
+ $('planBars').addEventListener('click',evt=>{const el=evt.target.closest('[data-plan]');if(el){state.selected=el.dataset.plan;scheduleRender();}});
+ $('filterSelect').addEventListener('change',evt=>{state.filter=evt.target.value;const visible=filtered(E.rank(state.input,state.settings));if(!visible.some(x=>x.id===state.selected))state.selected=visible[0]?.id||state.selected;scheduleRender();});
+ $('rewardInput').addEventListener('input',settingsFromUI);$('surchargeSelect').addEventListener('change',settingsFromUI);$('optoutSelect').addEventListener('change',settingsFromUI);
+ $('viewEconomic').addEventListener('click',()=>{state.settings.includeHSA=true;syncSettings();scheduleRender();});$('viewCash').addEventListener('click',()=>{state.settings.includeHSA=false;syncSettings();scheduleRender();});
+ $('resetBtn').addEventListener('click',()=>{state={input:{...E.DEFAULT_INPUT},settings:{...E.DEFAULT_SETTINGS,prices:{...E.DEFAULT_PRICES}},selected:'SHH',filter:'all',preset:'babyHeavy',matrixOpen:state.matrixOpen};syncControls();syncSettings();renderPresetState();$('filterSelect').value='all';scheduleRender();toast('Reset to the baby-heavy baseline.');});
+ $('exportBtn').addEventListener('click',exportCSV);$('saveBtn').addEventListener('click',saveScenario);
+ $('importBtn').addEventListener('click',()=>$('importFile').click());$('importFile').addEventListener('change',async evt=>{const f=evt.target.files?.[0];if(!f)return;try{hydrate(JSON.parse(await f.text()));toast('Saved scenario imported successfully.');}catch(e){toast('Could not read that scenario JSON.');}evt.target.value='';});
+ $('matrixToggle').addEventListener('click',()=>{state.matrixOpen=!state.matrixOpen;$('matrixContent').hidden=!state.matrixOpen;$('matrixToggle').textContent=state.matrixOpen?'Hide scenario grid ↑':'Show scenario grid ↓';$('matrixToggle').setAttribute('aria-expanded',String(state.matrixOpen));if(state.matrixOpen)renderMatrix();});
+ const matrixChoose=evt=>{const el=evt.target.closest('[data-matrix-plan]');if(!el)return;state.selected=el.dataset.matrixPlan;state.filter='all';$('filterSelect').value='all';setPreset(el.dataset.matrixPreset);toast('Loaded scenario and highlighted the selected plan.');};
+ $('matrixTable').addEventListener('click',matrixChoose);$('matrixTable').addEventListener('keydown',evt=>{if(evt.key==='Enter'||evt.key===' '){evt.preventDefault();matrixChoose(evt);}});
+ render();
+}
+init();
+})();
+
+</script>
+</body>
+</html>
