@@ -587,11 +587,6 @@ function init(){loadLocal();buildControls();buildPrices();buildPresets();syncSet
  $('limitsBtn').addEventListener('click',()=>dlg.showModal());
  $('limitsClose').addEventListener('click',()=>dlg.close());
  dlg.addEventListener('click',evt=>{if(evt.target===dlg)dlg.close();});
-
- const dlg=$('limitsDialog');
- $('limitsBtn').addEventListener('click',()=>dlg.showModal());
- $('limitsClose').addEventListener('click',()=>dlg.close());
- dlg.addEventListener('click',evt=>{if(evt.target===dlg)dlg.close();});
 $('filterSelect').value=state.filter;
  $('crossoverFocus').value=state.crossoverFocus;$('crossoverFocus').addEventListener('change',evt=>{state.crossoverFocus=evt.target.value;state.crossoverMetric='auto';$('crossoverMetric').dataset.person='';scheduleRender();});$('crossoverMetric').addEventListener('change',evt=>{state.crossoverMetric=evt.target.value;scheduleRender();});
  $('presetGrid').addEventListener('click',evt=>{const el=evt.target.closest('[data-preset]');if(el)setPreset(el.dataset.preset);});
